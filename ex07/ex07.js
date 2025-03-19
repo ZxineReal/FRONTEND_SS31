@@ -1,10 +1,3 @@
-let inputValue;
-let jobs = [];
-
-inputElement.addEventListener("input")
-
-
-
 let todoList = [
   {
     id: 1,
@@ -37,7 +30,15 @@ let todoList = [
     completed: false,
   },
 ];
+const listElement = document.querySelector("#myUL");
 
-const btnElement = document.querySelector(".addBtn");
-const inputElement = document.querySelector("#myInput");
-const divElement = document.querySelector("#myDIV");
+function renderList() {
+  listElement.innerHTML = "";
+  todoList.forEach((job) => {
+    let li = document.createElement("li");
+    li.textContent = job.task;
+    listElement.appendChild(li);
+  });
+}
+
+renderList();
